@@ -2,7 +2,7 @@
 
 #### 介绍
 
-一个个人博客网站的源码脚手架，[r-blog](http://blog.rubinchu.com)基于此脚手架搭建，希望对有快速搭建个人博客的小伙伴有所帮助。  
+一个个人博客网站的源码脚手架，[r-blog](http://blog.rubinchu.com)基于此脚手架搭建，希望对有快速搭建个人博客的小伙伴有所帮助   
  **在此特别说明：** 本项目大部分基于dbblog项目抽离，特此感谢dbblog项目作者Bobbi，dbblog站点地址：[dbblog](https://github.com/llldddbbb/dbblog)
 
 #### 软件架构
@@ -38,8 +38,8 @@ jasypt 加密
 #### 本地调试
 
 1.   **后端api项目：** 小伙伴按照上面的安装说明配置好环境之后，就像启动平常的SpringBoot项目一样启动此项目即可
-2.  **前台前端项目：** 小伙伴按照上面的安装说明配置好环境之后，执行cnpm install(需要提前安装cnpm，[安装教程Windows](https://blog.csdn.net/weixin_38806135/article/details/88305885) [安装教程Mac](https://blog.csdn.net/cency_chen/article/details/87927107)),安装完之后执行npm start，等待项目起来，访问localhost:8081即可
-3.  **后台前端项目：** 小伙伴按照上面的安装说明配置好环境之后，执行cnpm install(需要提前安装cnpm，[安装教程Windows](https://blog.csdn.net/weixin_38806135/article/details/88305885) [安装教程Mac](https://blog.csdn.net/cency_chen/article/details/87927107)),安装完之后执行npm start，等待项目起来，访问localhost:8080即可。初始账户密码为：admin/123456
+2.  **前台前端项目：** 小伙伴按照上面的安装说明配置好环境之后，执行cnpm install(需要提前安装cnpm，[安装教程Windows](https://blog.csdn.net/weixin_38806135/article/details/88305885) [安装教程Mac](https://blog.csdn.net/cency_chen/article/details/87927107))。安装完之后执行npm start，等待项目起来，访问localhost:8081即可
+3.  **后台前端项目：** 小伙伴按照上面的安装说明配置好环境之后，执行cnpm install(需要提前安装cnpm，[安装教程Windows](https://blog.csdn.net/weixin_38806135/article/details/88305885) [安装教程Mac](https://blog.csdn.net/cency_chen/article/details/87927107))。安装完之后执行npm start，等待项目起来，访问localhost:8080即可。初始账户密码为：admin/123456
 
 #### 线上部署说明
 
@@ -56,7 +56,7 @@ jasypt 加密
 
 #### 版本介绍
 
-此版本实现了博客的功能，作为日常使用没有什么问题。  
+此版本实现了博客的功能，作为日常使用没有什么问题   
 下版本需要优化的点：
 * 优化查询缓存的细节，此版本只是粗略的删除了缓存查询以保证点赞数和查看数一致
 * 集成elasticsearch、集成Redis、集成RocketMQ改成自定义标签自动装配以提升项目的查询性能
