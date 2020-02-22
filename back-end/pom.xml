@@ -90,6 +90,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- 采用轻量级的undertow作为web服务器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
