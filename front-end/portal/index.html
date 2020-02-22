@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- TODO SEO -->
+  <meta name="description" content="这里写一些你的网站简介，主要作用是做一个网站最最最最最初的SEO">
+  <meta name="keywords" content="这里写一些你网站的关键词，多的话可以用逗号隔开，主要作用是做一个网站最最最最最初的SEO"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0.user-scalable=no">
+  <!--可以定义你自己的favicon,替换static/img文件夹里面的favicon.ico即可-->
+  <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
+  <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/solarized-light.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+  <% if (process.env.NODE_ENV === 'production') { %>
+  <!-- 生产环境 -->
+  <script>document.write('<script src="/static/config/index-prod.js?t=' + new Date().getTime() + '"><\/script>');</script>
+  <% }else { %>
+  <!-- 开发环境 -->
+  <script src="/static/config/index-dev.js"></script>
+  <% } %>
+</head>
+<body class="docs">
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/languages/java.min.js"></script>
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
