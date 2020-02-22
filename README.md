@@ -2,8 +2,8 @@
 
 #### 介绍
 
-&nbsp;&nbsp;&nbsp;&nbsp;一个个人博客网站的源码脚手架，[r-blog](http://blog.rubinchu.com)基于此脚手架搭建，希望对有快速搭建个人博客的小伙伴有所帮助。  
-&nbsp;&nbsp;&nbsp;&nbsp; **在此特别说明：** 本项目大部分基于dbblog项目抽离，特此感谢dbblog项目作者Bobbi，dbblog站点地址：[dbblog](https://github.com/llldddbbb/dbblog)
+一个个人博客网站的源码脚手架，[r-blog](http://blog.rubinchu.com)基于此脚手架搭建，希望对有快速搭建个人博客的小伙伴有所帮助。  
+ **在此特别说明：** 本项目大部分基于dbblog项目抽离，特此感谢dbblog项目作者Bobbi，dbblog站点地址：[dbblog](https://github.com/llldddbbb/dbblog)
 
 #### 软件架构
 
@@ -54,3 +54,9 @@ jasypt 加密
 2.  nginx配置的过程中需要注意什么？  
 答：我在nginx配置过程中曾经傻缺一样的加上了防止跨域的请求头，结果我们的api后端项目已经处理了跨域问题，导致浏览器报错重复的请求头错误。所以提示小伙伴们在我们的后端项目已经处理了跨域的时候，nginx配置就别配置跨域的东西了。
 
+#### 版本介绍
+
+此版本实现了博客的功能，作为日常使用没有什么问题。  
+下版本需要优化的点：
+* 优化查询缓存的细节，此版本只是粗略的删除了缓存查询以保证点赞数和查看数一致
+* 集成elasticsearch、集成Redis、集成RocketMQ改成自定义标签自动装配以提升项目的查询性能
