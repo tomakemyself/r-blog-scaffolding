@@ -9,11 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * <p>
@@ -33,18 +28,6 @@ public class OssResourceServiceImpl implements OssResourceService {
         File dest = new File(OssConstants.UPLOAD_PREFIX + newName);
         try {
             file.transferTo(dest);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        // 赋予读写权限 这是undertow服务器的一个坑
-        Set<PosixFilePermission> perms = new HashSet<>();
-        perms.add(PosixFilePermission.OWNER_READ);
-        perms.add(PosixFilePermission.OWNER_WRITE);
-        perms.add(PosixFilePermission.GROUP_READ);
-        perms.add(PosixFilePermission.OTHERS_READ);
-        try {
-            Files.setPosixFilePermissions(Paths.get(OssConstants.UPLOAD_PREFIX + newName), perms);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
