@@ -5,6 +5,17 @@
 Source scaffolding for a personal blog site,[r-blog](http://blog.rubinchu.com)based on this scaffolding construction, I hope it will be helpful to friends who have a personal blog quickly.  
  **Special note here:** this project is mostly based on the dbblog project extraction. Thanks to the dbblog project author Bobbi, the dbblog site address:[dbblog](https://github.com/llldddbbb/dbblog)
 
+#### Website image
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175734_24900975_1506368.jpeg "1582362358893.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175800_3fd4f32c_1506368.jpeg "1582362394781.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175809_1ea2dc3a_1506368.jpeg "1582365068043.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175818_f53019af_1506368.jpeg "1582365112871.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175829_3544ce7a_1506368.jpeg "1582365137632.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175841_b907be68_1506368.jpeg "1582365255991.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175850_8fa05999_1506368.jpeg "1582365306439.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175907_3217f04f_1506368.jpeg "1582365342694.jpg")
+![Enter a caption](https://images.gitee.com/uploads/images/2020/0222/175914_1e9394f4_1506368.jpeg "1582365365623.jpg")
+
 #### Software architecture
 
 SpringBoot 2.x  
