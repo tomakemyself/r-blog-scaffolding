@@ -22,7 +22,7 @@ create table article
   comment '文章'
 ;
 
-INSERT INTO r_blog.article (id, title, description, author, content, content_format, read_num, comment_num, like_num, cover_type, cover, create_time, update_time, recommend, category_id, publish, top) VALUES (1, '关于本站和博主', '关于本站和博主', '***', '# 关于我
+INSERT INTO qikeblog.article (id, title, description, author, content, content_format, read_num, comment_num, like_num, cover_type, cover, create_time, update_time, recommend, category_id, publish, top) VALUES (1, '关于本站和博主', '关于本站和博主', '***', '# 关于我
 ***，英文名***，是一名努力成长中的Java爱好者
 
 # 关于本站
@@ -32,7 +32,7 @@ INSERT INTO r_blog.article (id, title, description, author, content, content_for
 </p>
 <h1 id="-">关于本站</h1>
 <p>本站前端Vue，后台是Java
-', 0, 0, 0, 1, 'http://oss.dblearn.cn/r_blog/20190303/18a6c1d2ed47494396462901ffe02f30.jpg', now(), now(), 1, '1,2,3', 1, 1);
+', 0, 0, 0, 1, 'http://oss.dblearn.cn/qikeblog/20190303/18a6c1d2ed47494396462901ffe02f30.jpg', now(), now(), 1, '1,2,3', 1, 1);
 
 create table book
 (
@@ -116,9 +116,9 @@ alter table category
   add primary key (id)
 ;
 
-INSERT INTO r_blog.category (id, name, type, `rank`, parent_id) VALUES (1, '漫谈', 0, 0, -1);
-INSERT INTO r_blog.category (id, name, type, `rank`, parent_id) VALUES (2, '本站相关', 0, 1, 1);
-INSERT INTO r_blog.category (id, name, type, `rank`, parent_id) VALUES (3, '关于', 0, 2, 2);
+INSERT INTO qikeblog.category (id, name, type, `rank`, parent_id) VALUES (1, '漫谈', 0, 0, -1);
+INSERT INTO qikeblog.category (id, name, type, `rank`, parent_id) VALUES (2, '本站相关', 0, 1, 1);
+INSERT INTO qikeblog.category (id, name, type, `rank`, parent_id) VALUES (3, '关于', 0, 2, 2);
 
 create table link
 (
@@ -196,68 +196,68 @@ create table sys_menu
   comment '菜单管理'
 ;
 
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (1, 0, '系统管理', null, null, 0, 'config', 3);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (2, 1, '管理员列表', 'sys/user', null, 1, 'admin', 1);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (3, 1, '角色管理', 'sys/role', null, 1, 'role', 2);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (4, 1, '菜单管理', 'sys/menu', null, 1, 'menu', 3);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (5, 1, 'SQL监控', 'http://localhost:8080/r_blog/druid/sql.html', null, 1, 'config', 5);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (15, 2, '查看', null, 'sys:user:list,sys:user:info', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (16, 2, '新增', null, 'sys:user:save,sys:role:select', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (17, 2, '修改', null, 'sys:user:update,sys:role:select', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (18, 2, '删除', null, 'sys:user:delete', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (19, 3, '查看', null, 'sys:role:list,sys:role:info', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (20, 3, '新增', null, 'sys:role:save,sys:menu:list', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (21, 3, '修改', null, 'sys:role:update,sys:menu:list', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (22, 3, '删除', null, 'sys:role:delete', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (23, 4, '查看', null, 'sys:menu:list,sys:menu:info', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (24, 4, '新增', null, 'sys:menu:save,sys:menu:select', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (25, 4, '修改', null, 'sys:menu:update,sys:menu:select', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (26, 4, '删除', null, 'sys:menu:delete', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (30, 0, '博文管理', null, null, 0, 'article', 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (31, 30, '新增博文', 'article/article-add-or-update', 'article:save,article:update', 1, 'add', 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (32, 30, '博文列表', 'article/article', null, 1, 'list', 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (33, 32, '删除', null, 'article:delete', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (34, 32, '查看', null, 'article:list', 2, null, 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (38, 43, '分类管理', 'operation/category', null, 1, 'category', 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (39, 38, '查看', null, 'operation:category:list,operation:category:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (40, 38, '新增', null, 'operation:category:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (41, 38, '修改', null, 'operation:category:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (42, 38, '删除', null, 'operation:category:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (43, 0, '运营管理', null, null, 0, 'operation', 2);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (45, 1, '系统参数', 'sys/param', null, 1, 'param', 4);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (46, 45, '查看', null, 'sys:param:list,sys:param:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (47, 45, '新增', null, 'sys:param:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (48, 45, '修改', null, 'sys:param:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (49, 45, '删除', null, 'sys:param:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (50, 43, '标签管理', 'operation/tag', null, 1, 'tag', 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (51, 50, '查看', null, 'operation:tag:list,operation:tag:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (52, 50, '新增', null, 'operation:tag:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (53, 50, '修改', null, 'operation:tag:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (54, 50, '删除', null, 'operation:tag:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (61, 66, '图书管理', 'book/book', null, 1, 'list', 3);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (62, 61, '查看', null, 'book:list,book:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (63, 61, '新增', null, 'book:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (64, 61, '修改', null, 'book:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (65, 61, '删除', null, 'book:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (66, 0, '阅读管理', null, null, 0, 'read', 1);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (67, 66, '新增图书', 'book/book-add-or-update', '', 1, 'add', 1);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (68, 66, '笔记管理', 'book/note', null, 1, 'list', 2);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (69, 68, '查看', null, 'book:note:list,book:note:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (70, 68, '新增', null, 'book:note:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (71, 68, '修改', null, 'book:note:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (72, 68, '删除', null, 'book:note:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (73, 66, '新增笔记', 'book/note-add-or-update', '', 1, 'add', 0);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (74, 43, '友链管理', 'operation/link', null, 1, 'link', 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (75, 74, '查看', null, 'operation:link:list,operation:link:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (76, 74, '新增', null, 'operation:link:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (77, 74, '修改', null, 'operation:link:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (78, 74, '删除', null, 'operation:link:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (79, 43, '推荐管理', 'operation/recommend', null, 1, 'recommend', 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (80, 79, '查看', null, 'operation:recommend:list,operation:recommend:info', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (81, 79, '新增', null, 'operation:recommend:save', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (82, 79, '修改', null, 'operation:recommend:update', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (83, 79, '删除', null, 'operation:recommend:delete', 2, null, 6);
-INSERT INTO r_blog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (84, 32, '刷新缓存', null, 'article:cache:refresh', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (1, 0, '系统管理', null, null, 0, 'config', 3);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (2, 1, '管理员列表', 'sys/user', null, 1, 'admin', 1);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (3, 1, '角色管理', 'sys/role', null, 1, 'role', 2);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (4, 1, '菜单管理', 'sys/menu', null, 1, 'menu', 3);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (5, 1, 'SQL监控', 'http://localhost:8080/qikeblog/druid/sql.html', null, 1, 'config', 5);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (15, 2, '查看', null, 'sys:user:list,sys:user:info', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (16, 2, '新增', null, 'sys:user:save,sys:role:select', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (17, 2, '修改', null, 'sys:user:update,sys:role:select', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (18, 2, '删除', null, 'sys:user:delete', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (19, 3, '查看', null, 'sys:role:list,sys:role:info', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (20, 3, '新增', null, 'sys:role:save,sys:menu:list', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (21, 3, '修改', null, 'sys:role:update,sys:menu:list', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (22, 3, '删除', null, 'sys:role:delete', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (23, 4, '查看', null, 'sys:menu:list,sys:menu:info', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (24, 4, '新增', null, 'sys:menu:save,sys:menu:select', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (25, 4, '修改', null, 'sys:menu:update,sys:menu:select', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (26, 4, '删除', null, 'sys:menu:delete', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (30, 0, '博文管理', null, null, 0, 'article', 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (31, 30, '新增博文', 'article/article-add-or-update', 'article:save,article:update', 1, 'add', 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (32, 30, '博文列表', 'article/article', null, 1, 'list', 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (33, 32, '删除', null, 'article:delete', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (34, 32, '查看', null, 'article:list', 2, null, 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (38, 43, '分类管理', 'operation/category', null, 1, 'category', 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (39, 38, '查看', null, 'operation:category:list,operation:category:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (40, 38, '新增', null, 'operation:category:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (41, 38, '修改', null, 'operation:category:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (42, 38, '删除', null, 'operation:category:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (43, 0, '运营管理', null, null, 0, 'operation', 2);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (45, 1, '系统参数', 'sys/param', null, 1, 'param', 4);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (46, 45, '查看', null, 'sys:param:list,sys:param:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (47, 45, '新增', null, 'sys:param:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (48, 45, '修改', null, 'sys:param:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (49, 45, '删除', null, 'sys:param:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (50, 43, '标签管理', 'operation/tag', null, 1, 'tag', 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (51, 50, '查看', null, 'operation:tag:list,operation:tag:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (52, 50, '新增', null, 'operation:tag:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (53, 50, '修改', null, 'operation:tag:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (54, 50, '删除', null, 'operation:tag:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (61, 66, '图书管理', 'book/book', null, 1, 'list', 3);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (62, 61, '查看', null, 'book:list,book:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (63, 61, '新增', null, 'book:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (64, 61, '修改', null, 'book:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (65, 61, '删除', null, 'book:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (66, 0, '阅读管理', null, null, 0, 'read', 1);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (67, 66, '新增图书', 'book/book-add-or-update', '', 1, 'add', 1);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (68, 66, '笔记管理', 'book/note', null, 1, 'list', 2);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (69, 68, '查看', null, 'book:note:list,book:note:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (70, 68, '新增', null, 'book:note:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (71, 68, '修改', null, 'book:note:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (72, 68, '删除', null, 'book:note:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (73, 66, '新增笔记', 'book/note-add-or-update', '', 1, 'add', 0);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (74, 43, '友链管理', 'operation/link', null, 1, 'link', 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (75, 74, '查看', null, 'operation:link:list,operation:link:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (76, 74, '新增', null, 'operation:link:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (77, 74, '修改', null, 'operation:link:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (78, 74, '删除', null, 'operation:link:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (79, 43, '推荐管理', 'operation/recommend', null, 1, 'recommend', 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (80, 79, '查看', null, 'operation:recommend:list,operation:recommend:info', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (81, 79, '新增', null, 'operation:recommend:save', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (82, 79, '修改', null, 'operation:recommend:update', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (83, 79, '删除', null, 'operation:recommend:delete', 2, null, 6);
+INSERT INTO qikeblog.sys_menu (menu_id, parent_id, name, url, perms, type, icon, order_num) VALUES (84, 32, '刷新缓存', null, 'article:cache:refresh', 2, null, 0);
 
 create table sys_param
 (
@@ -271,15 +271,15 @@ create table sys_param
   comment '系统参数'
 ;
 
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (2, 0, '一级', '/operation-category', 'CATEGORY_RANK');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (3, 1, '二级', '/operation-category', 'CATEGORY_RANK');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (4, 2, '三级', '/operation-category', 'CATEGORY_RANK');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (7, 0, '小图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (8, 1, '大图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (9, 2, '无图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (10, 0, '文章', null, 'MODULE_TYPE');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (11, 1, '图书', null, 'MODULE_TYPE');
-INSERT INTO r_blog.sys_param (id, par_key, par_value, menu_url, type) VALUES (12, 2, '笔记', null, 'MODULE_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (2, 0, '一级', '/operation-category', 'CATEGORY_RANK');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (3, 1, '二级', '/operation-category', 'CATEGORY_RANK');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (4, 2, '三级', '/operation-category', 'CATEGORY_RANK');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (7, 0, '小图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (8, 1, '大图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (9, 2, '无图片', '/article-addOrUpdate', 'ARTICLE_COVER_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (10, 0, '文章', null, 'MODULE_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (11, 1, '图书', null, 'MODULE_TYPE');
+INSERT INTO qikeblog.sys_param (id, par_key, par_value, menu_url, type) VALUES (12, 2, '笔记', null, 'MODULE_TYPE');
 
 create table sys_role
 (
@@ -317,7 +317,7 @@ create table sys_user
 )
 ;
 
-INSERT INTO r_blog.sys_user (user_id, username, password, email, salt, create_user_id, create_time, status) VALUES (1, 'admin', 'cdac762d0ba79875489f6a8b430fa8b5dfe0cdd81da38b80f02f33328af7fd4a', '***@qq.com', 'YzcmCZNvbXocrsz9dm8e', '1', now(), 1);
+INSERT INTO qikeblog.sys_user (user_id, username, password, email, salt, create_user_id, create_time, status) VALUES (1, 'admin', 'cdac762d0ba79875489f6a8b430fa8b5dfe0cdd81da38b80f02f33328af7fd4a', '***@qq.com', 'YzcmCZNvbXocrsz9dm8e', '1', now(), 1);
 
 create table sys_user_role
 (
@@ -339,8 +339,8 @@ create table tag
   comment '标签'
 ;
 
-INSERT INTO r_blog.tag (id, name, type) VALUES (1, '本站相关', 0);
-INSERT INTO r_blog.tag (id, name, type) VALUES (2, '关于', 0);
+INSERT INTO qikeblog.tag (id, name, type) VALUES (1, '本站相关', 0);
+INSERT INTO qikeblog.tag (id, name, type) VALUES (2, '关于', 0);
 
 create table tag_link
 (
@@ -354,6 +354,6 @@ create table tag_link
 ;
 
 
-INSERT INTO r_blog.tag_link (id, tag_id, link_id, type) VALUES (1, 1, 1, 0);
-INSERT INTO r_blog.tag_link (id, tag_id, link_id, type) VALUES (2, 2, 1, 0);
+INSERT INTO qikeblog.tag_link (id, tag_id, link_id, type) VALUES (1, 1, 1, 0);
+INSERT INTO qikeblog.tag_link (id, tag_id, link_id, type) VALUES (2, 2, 1, 0);
 
